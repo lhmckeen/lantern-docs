@@ -1,0 +1,90 @@
+# bibliographic metadata
+
+title: Lantern
+subtitle: Minimal Computing Workflows for Publishing Open Textbooks
+
+author:
+  - name: Chris Diaz
+    affiliation: Northwestern University
+    orchid:
+  - name: Lauren McKeen McDonald
+    affiliation: Northwestern University
+    orchid:
+
+contributor:
+  - Maria Palacio
+  - Angelina Jaglinski
+  - Sherry Wang
+
+publication-year: 2021
+website: something
+
+keywords:
+  - digital publishing
+  - pandoc
+  - open educational resources
+
+subjects: 
+  - Academic Libraries
+  - Technology
+
+description: |
+  Lantern introduces and demonstrates a minimal computing approach to producing textbooks using free and open source software.
+
+  This guide includes tutorials and documentation to help you use the technology for your own textbook projects. 
+
+copyright:
+  holder: Chris Diaz & Lauren McKeen McDonald
+  # see https://rightsstatements.org/ for recommended statement and uri options
+  statement: In Copyright 
+  statement-uri: http://rightsstatements.org/vocab/InC/1.0/
+  # see https://creativecommons.org/licenses/ for recommended license and uri options
+  license: Attribution 4.0 International (CC BY 4.0) 
+  licence-uri: https://creativecommons.org/licenses/by/4.0/
+
+publisher:
+  name: Northwestern University Libraries
+  location: Evanston, IL # city, state
+  website: https://library.northwestern.edu
+
+lang: en-us 
+
+# website settings
+
+navbar-bg-color: "#1e87f0"
+navbar-text-color: "#ffffff"
+footer-bg-color: "#1e87f0"
+footer-text-color: "#ffffff"
+
+cover: true
+toc-title: "Contents" 
+reference-section-title: "References" 
+
+download: # full-text download options
+  - format: PDF
+    link: textbook.pdf
+  - format: EPUB
+    link: textbook.epub
+  - format: DOCX
+    link: textbook.docx
+  - format: LATEX
+    link: textbook.tex
+  - format: GITHUB
+    link: https://github.com/nulib-oer/lantern
+
+# pandoc-crossref option
+linkReferences: true
+
+# print settings
+
+paper:
+  # available units: in, cm, or mm
+  # default creates A4 page size, > 150 pages long
+  width: 8.27in
+  height: 11.69in
+  gutter: 1in
+  margin:
+    top: 1in
+    bottom: 1in
+    left: 1in
+    right: 1in

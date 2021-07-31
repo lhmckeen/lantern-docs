@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="$if(lang)$$lang$$else$en-us$endif$"$if(dir)$dir="$dir$"$endif$>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        $for(author-meta)$
+        <meta name="author" content="$author-meta$" />
+        $endfor$
+        $if(date-meta)$
+        <meta name="dcterms.date" content="$date-meta$" />
+        $endif$
+        $if(keywords)$
+        <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+        $endif$
+        <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+        <link rel="stylesheet" type="text/css" href="uikit.css">
+        <link rel="stylesheet" type="text/css" href="lantern.css">
+        <link rel="stylesheet" type="text/css" href="custom.css">
+        <script src="uikit.min.js"></script>
+        <script src="uikit-icons.min.js" defer></script>
+        $if(math)$
+        $math$
+        $endif$
+        <!-- Bibliographic Metadata -->
+        <meta name="citation_title" content="$title$">
+        <meta name="citation_year" content="$publication-year$">
+        <meta name="citation_language" content="$lang$">
+        $for(keyword)$
+        <meta name="citation_keywords" content="$keyword$">
+        $endfor$
+        <meta name="citation_publisher" content="$publisher.name$">
+        <meta name="citation_isbn" content="$isbn_e$">
+        $for(author)$
+        <meta name="citation_author" content="$author.name$">
+        $endfor$
+        $if(book_editor)$
+        <meta name="citation_author" content="$editor.book$ (Book Editor)">
+        $endif$
+        $if(series_editor)$
+        <meta name="citation_author" content="$editor.series$ (Series Editor)">
+        $endif$
+        $if(doi)$
+        <meta name="dc.identifier" content="$doi$">
+        $endif$
+        <!-- Open Graph Metadata -->
+        <meta property="og:title" content="$title$" />
+        <meta property="og:description" content="$description$" />
+        <meta property="og:image" content="cover.png" />
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="$title$" />
+        <meta name="twitter:description" content="$description$" />
+        <meta name="twitter:image" content="cover.png" />
+        <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <![endif]-->
+        $for(header-includes)$
+        $header-includes$
+        $endfor$
+    </head>
+    <body>
+        <div class="skip-link" >
+            Skip to <a href="#toc">table of contents</a>, <a href="#info">book information</a>, or <a href="#begin">first chapter</a>
+        </div>
+    $for(include-before)$
+        $include-before$
+    $endfor$
+
+    <header role="banner">
+        <div class="uk-container">
+            <nav id="navbar" class="uk-navbar uk-background-default" uk-sticky>
+                <div class="nav-overlay uk-navbar-left">
+                    <a class="uk-navbar-item uk-text-large" href="#">
+                        $title$
+                    </a>
+                </div>
+                <div class="nav-overlay uk-navbar-right">
+                    <button class="uk-button uk-margin-small-right" type="button" uk-toggle="target: #toc">
+                        $toc-title$
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Table of Contents" role="navigation" id="toc" uk-offcanvas="mode: slide">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            $if(toc)$
+                $if(toc-title)$
+                <span class="uk-text-large">$toc-title$</span>
+                $endif$
+                $table-of-contents$
+                $if(definitions)$
+                <ul>
+                    <li><a href="#definitions">Definitions</a></li>
+                </ul>
+                $endif$
+            $endif$
+        </div>
+    </nav>
+   
+    <main>
+
+        <section id="info" class="uk-section uk-section-small">
+            <div class="uk-container uk-container-small">
+                <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
+                    <div class="uk-background-secondary uk-light uk-padding">
+                        $if(cover)$
+                        <img data-src="cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
+                        $endif$
+                        <h1 class="uk-text-bold">
+                            $title$
+                        </h1>
+                        $if(subtitle)$
+                        <p class="uk-text-lead uk-text-italic">$subtitle$</p>
+                        $endif$
+                        <p class="uk-text-small">$for(author)$$author.name$$sep$, $endfor$</p>
+                        <div class="uk-text-large">
+                            $description$
+                        </div>
+                        <hr>
+                        <dl class="uk-description-list uk-description-list-divider">
+                            <dt>Copyright</dt>
+                            <dd>$publication-year$ &copy; $copyright.holder$</dd>
+                            <dt>License</dt>
+                            <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
+                            <dt>Publisher</dt>
+                            <dd><a href="$publisher.website$">$publisher.name$</a></dd>
+                            $if(editor)$
+                            <dt>Editors</dt>
+                            <dd>$for(editor)$$editor$$sep$, $endfor$</dd>
+                            $endif$
+                            $if(contributor)$
+                            <dt>Contributors</dt>
+                            <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
+                            $endif$
+                        </dl>
+                        $if(download)$
+                        <p class="uk-text-uppercase">Download</p>
+                        <div class="uk-button-group uk-light">
+                            $for(download)$
+                            <button class="uk-button uk-button-default uk-button-small">
+                                <a href="$download.link$">$download.format$</a>
+                            </button>
+                            $endfor$
+                        </div>
+                        $endif$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="begin" class="uk-container uk-container-small uk-text-large">
+$body$
+
+$if(definitions)$
+${ definitions.html() }
+$endif$
+        </div>
+
+    </main>
+
+    $for(include-after)$
+        $include-after$
+    $endfor$
+    
+    <footer class="uk-container" role="contentinfo">
+        &copy; $publication-year$. $copyright.holder$.
+    </footer>
+
+    <script>
+        UIkit.offcanvas('#toc').show();
+    </script>
+    
+    <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+            if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                links[i].target = '_blank';
+            }}
+        })();
+    </script>
+    
+    </body>
+</html>

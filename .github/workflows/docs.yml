@@ -1,0 +1,36 @@
+name: Update Documentation
+
+on:
+  push:
+    branches-ignore:
+      - main  # Set a branch name to trigger deployment
+    paths:
+      - 'docs/**'
+
+jobs:
+  make_documentation:
+    runs-on: ubuntu-20.04
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc and LaTeX
+        run: |
+          brew install pandoc pandoc-crossref
+
+      - name: Build Documentation Site
+        run: |
+          make docs
+          touch ./public/docs/.nojekyll
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - name: Deploy Documentation Website to AWS
+        run: |
+          aws s3 sync ./public/docs ${{ secrets.AWS_S3_BUCKET_ID }}

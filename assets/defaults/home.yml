@@ -1,0 +1,15 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - source/config.yml
+
+to: html5
+
+template: assets/templates/lantern-home.html
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
