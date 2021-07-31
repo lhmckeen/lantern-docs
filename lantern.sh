@@ -9,6 +9,7 @@ IMAGES=$(find source/images -type f)
 CHAPTERS=$(find source/chapters -name '*.md')
 
 # output configuration files
+HOME='--defaults assets/defaults/home.yml'
 HTML='--filter pandoc-crossref --defaults assets/defaults/html.yml'
 DOCX='--defaults assets/defaults/docx.yml'
 LATEX='--filter pandoc-crossref --defaults assets/defaults/latex.yml --no-highlight'
@@ -51,12 +52,12 @@ epub() {
 html() {
     awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $CHAPTERS >> chapters.md;
     mkdir -p $OUTPUT_DIRECTORY;
-    $PANDOC_COMMAND chapters.md $HTML -o $html;
+    $PANDOC_COMMAND assets/empty.txt $HOME -o public/index.html;
+    $PANDOC_COMMAND chapters.md $HTML -o public/textbook.html;
     cp $IMAGES $OUTPUT_DIRECTORY;
     cp assets/lib/* $OUTPUT_DIRECTORY;
     cp assets/styles/* $OUTPUT_DIRECTORY;
-    mv $OUTPUT_DIRECTORY/$OUTPUT_FILENAME.html $OUTPUT_DIRECTORY/index.html;
-    mv chapters.md $OUTPUT_DIRECTORY/$OUTPUT_FILENAME.md
+    rm chapters.md;
     echo "📚 The HTML edition is now available in public/index.html";
 }
 

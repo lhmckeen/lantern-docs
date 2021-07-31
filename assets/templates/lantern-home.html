@@ -77,13 +77,12 @@ $endfor$
                 <div class="uk-navbar-right uk-margin-xlarge-right">
                     <ul class="uk-navbar-nav">
                         <li style="color: $navbar-text-color$">
-                            <a href="textbook.html" class="uk-text-large" style="color: $navbar-text-color$"><span uk-icon="icon: play; ratio: 2"></span> Read</a>
+                            <a href="textbook.html" class="uk-text-large" style="color: $navbar-text-color$"><span uk-icon="icon: play; ratio: 2"></span> Learn More</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li class="uk-navbar-item"><a href="textbook.html">ONLINE</a></li>
-                                    $if(download)$
-                                    $for(download)$
-                                    <li class="uk-navbar-item"><a href="$download.link$">$download.format$</a></li>
+                                    $if(output)$
+                                    $for(output)$
+                                    <li class="uk-navbar-item"><a href="$output.link$">$output.format$</a></li>
                                     $endfor$
                                     $endif$
                             </div>

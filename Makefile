@@ -4,8 +4,22 @@ OUTPUT_DIRECTORY = public
 # looks for :Zone.Identifier files added by https://github.com/microsoft/WSL/issues/4609
 CHECK = $(shell find . -name '*:Zone.Identifier' -delete)
 IMAGES = $(shell find source/images -type f)
-CHAPTERS = source/chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
+CHAPTERS += $(addprefix ./source/chapters/,\
+ introduction.md\
+ technology.md\
+ manuscripts.md\
+ formatting.md\
+ online-workflow.md\
+ desktop-workflow.md\
+ metadata.md\
+ content.md\
+ media.md\
+ bibliographies.md\
+ customization.md\
+ troubleshooting.md\
+)
+
 
 # output configuration files
 HTML = --filter pandoc-crossref --defaults assets/defaults/html.yml

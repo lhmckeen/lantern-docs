@@ -24,7 +24,7 @@ number-sections: false
 # citations
 citeproc: true
 bibliography:
-  - source/data/references.bib
+  - source/references.bib
 
 # code blocks
 highlight-style: pygments

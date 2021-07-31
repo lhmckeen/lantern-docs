@@ -20,13 +20,13 @@ toc-depth: 3
 number-sections: false
 number-offset: [0,0,0,0,0,0]
 
-#filters:
-#  - pandoc-crossref
+#filters:  
+#  - assets/scripts/include-files.lua
 
 # citations
 citeproc: true
 bibliography:
-  - source/data/references.bib
+  - source/references.bib
 
 # math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
 html-math-method:

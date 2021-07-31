@@ -51,25 +51,19 @@ lang: en-us
 
 # website settings
 
-navbar-bg-color: "#1e87f0"
+navbar-bg-color: "#04165e"
 navbar-text-color: "#ffffff"
-footer-bg-color: "#1e87f0"
+footer-bg-color: "#04165e"
 footer-text-color: "#ffffff"
 
 cover: true
 toc-title: "Contents" 
 reference-section-title: "References" 
 
-download: # full-text download options
-  - format: PDF
-    link: textbook.pdf
-  - format: EPUB
-    link: textbook.epub
-  - format: DOCX
-    link: textbook.docx
-  - format: LATEX
-    link: textbook.tex
-  - format: GITHUB
+output: # full-text outputs
+  - format: Documentation
+    link: textbook.html
+  - format: GitHub Repo
     link: https://github.com/nulib-oer/lantern
 
 # pandoc-crossref option
