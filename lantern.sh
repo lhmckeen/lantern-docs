@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 # textbook content settings
 OUTPUT_FILENAME=textbook
 OUTPUT_DIRECTORY=public
 
 # ignore lines 4-5 from original makefile
-IMAGES=$(find source/images -type f)
+#IMAGES=$(find source/images -type f)
 CHAPTERS=$(find source/chapters -name '*.md')
 
 # output configuration files
@@ -54,9 +54,9 @@ html() {
     mkdir -p $OUTPUT_DIRECTORY;
     $PANDOC_COMMAND assets/empty.txt $HOME -o public/index.html;
     $PANDOC_COMMAND chapters.md $HTML -o public/textbook.html;
-    cp $IMAGES $OUTPUT_DIRECTORY;
-    cp assets/lib/* $OUTPUT_DIRECTORY;
-    cp assets/styles/* $OUTPUT_DIRECTORY;
+    cp -r source/images $OUTPUT_DIRECTORY;
+    cp -r assets/lib $OUTPUT_DIRECTORY;
+    cp -r assets/styles/ $OUTPUT_DIRECTORY;
     rm chapters.md;
     echo "📚 The HTML edition is now available in public/index.html";
 }

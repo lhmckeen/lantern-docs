@@ -3,13 +3,14 @@
 # https://pandoc.org/MANUAL.html#default-files
 
 metadata-file: 
-  - source/config.yml
-  - source/definitions.yml
+  - source/data/metadata.yml
+  - source/data/config.yml
+  - source/data/definitions.yml
 
 from: markdown
 to: html5
 
-template: assets/templates/lantern-book.html
+template: assets/templates/html.html
 standalone: true
 
 # table of contents
@@ -20,8 +21,8 @@ toc-depth: 3
 number-sections: false
 number-offset: [0,0,0,0,0,0]
 
-#filters:  
-#  - assets/scripts/include-files.lua
+#filters:
+#  - pandoc-crossref
 
 # citations
 citeproc: true

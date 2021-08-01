@@ -271,12 +271,12 @@ h3 {
 .uk-navbar-nav > li > a,
 .uk-navbar-item,
 .uk-navbar-toggle {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 #navbar ul li {
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 .uk-text-small {

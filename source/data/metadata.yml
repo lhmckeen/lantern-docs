@@ -48,37 +48,3 @@ publisher:
   website: https://library.northwestern.edu
 
 lang: en-us 
-
-# website settings
-
-navbar-bg-color: "#04165e"
-navbar-text-color: "#ffffff"
-footer-bg-color: "#04165e"
-footer-text-color: "#ffffff"
-
-cover: true
-toc-title: "Contents" 
-reference-section-title: "References" 
-
-output: # full-text outputs
-  - format: Documentation
-    link: textbook.html
-  - format: GitHub Repo
-    link: https://github.com/nulib-oer/lantern
-
-# pandoc-crossref option
-linkReferences: true
-
-# print settings
-
-paper:
-  # available units: in, cm, or mm
-  # default creates A4 page size, > 150 pages long
-  width: 8.27in
-  height: 11.69in
-  gutter: 1in
-  margin:
-    top: 1in
-    bottom: 1in
-    left: 1in
-    right: 1in

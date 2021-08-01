@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 
 docx_files=`ls -1 source/preprocess/*.docx 2>/dev/null | wc -l`
 odt_files=`ls -1 source/preprocess/*.odt 2>/dev/null | wc -l`

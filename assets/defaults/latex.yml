@@ -3,9 +3,10 @@
 # https://pandoc.org/MANUAL.html#default-files
 
 metadata-file: 
-  - source/config.yml
-  - source/definitions.yml
-
+  - source/data/metadata.yml
+  - source/data/config.yml
+  - source/data/definitions.yml
+  
 from: markdown
 to: latex
 
