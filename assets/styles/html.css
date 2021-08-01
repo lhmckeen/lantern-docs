@@ -76,3 +76,14 @@ aside > nav > ul > li > ul > li > a {
         overflow-y: auto;
     }
 }
+
+/* box */
+
+.box {
+    margin: var(--block-spacing-vertical) 0;
+    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background: #3D2F5B;
+    box-shadow: var(--card-box-shadow);
+}

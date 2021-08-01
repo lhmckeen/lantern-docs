@@ -1,7 +1,7 @@
 # bibliographic metadata
 
 title: Lantern
-subtitle: Minimal Computing Workflows for Publishing Open Textbooks
+subtitle: a template and workflow toolkit for open textbooks
 
 author:
   - name: Chris Diaz
@@ -29,9 +29,17 @@ subjects:
   - Technology
 
 description: |
-  Lantern introduces and demonstrates a minimal computing approach to producing textbooks using free and open source software.
+  Lantern introduces and demonstrates a minimal computing approach to producing textbooks using free and open source software. Lantern provides an Pandoc template for building multiple formats of book-length educational works.
+  
+  - **Free:** Lantern uses open source software and free-of-charge web services for processing, building, deploying, and hosting open textbooks. 
 
-  This guide includes tutorials and documentation to help you use the technology for your own textbook projects. 
+  - **Portable:** Lantern emphasizes the use of plain text file formats that can run on any machine or web host. No databases or servers are required. 
+
+  - **Multi-format:** Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, DOCX, and LaTeX editions of open textbooks. 
+
+  - **Sustainable:** Lantern minimizes the infrastructure, configuration, hosting, and maintenance costs related to traditional digital publishing systems and platforms.
+
+  - **Discoverable:** Lantern produces harvestable metadata in OAI-PMH, JSON-LD and Google Scholar tags.
 
 copyright:
   holder: Chris Diaz & Lauren McKeen McDonald

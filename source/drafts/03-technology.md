@@ -1,8 +1,8 @@
 # Technology Overview
 
-::: box :::
+**Lantern assumes no prior experience with writing code.** Lantern provides all of the necessary guides, templates, and scripts to begin publishing open textbooks on GitHub or any other web hosting service.
 
-**Lantern assumes no prior experience with writing code.** Lantern provides all of the necessary guides, templates, and scripts to begin publishing open textbooks.
+::: box :::
 
 Lantern teaches two production workflows that use plain text to format chapter content and produce open textbooks in multiple formats from a single source. Specifically, Lantern will help you...
 
@@ -67,9 +67,8 @@ Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/asse
 Lantern uses a few open source programs to make the publishing outputs, but you won't interact with these programs directly if you're using the online workflow:
 
 - [Pandoc](https://pandoc.org/) uses the Markdown source files to produce the textbook editions
-- [TinyTeX](https://yihui.org/tinytex/) is used to process LaTeX code for building the PDF edition
+- [LaTeX](https://www.latex-project.org/get/#tex-distributions) is used to process LaTeX code for building the PDF edition
 - [Bash](https://www.gnu.org/software/bash/) is the shell used for handling input and output files
-- [Make](https://www.gnu.org/software/make/) simplifies the production settings and processes
 
 The online workflow provides a GitHub repository that is preconfigured to run all of the required processing scripts using [GitHub Actions](https://github.com/features/actions). The Desktop workflow requires installing and using Pandoc, TinyTeX, Bash, and Make to produce the output files on your computer.
 
