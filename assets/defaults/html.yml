@@ -27,7 +27,7 @@ number-offset: [0,0,0,0,0,0]
 # citations
 citeproc: true
 bibliography:
-  - source/references.bib
+  - source/data/references.bib
 
 # math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
 html-math-method:

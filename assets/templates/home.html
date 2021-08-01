@@ -82,25 +82,35 @@ $endfor$
     $for(include-before)$
         $include-before$
     $endfor$
+
+    <div class="title-card" style="background-color:$title-card-bg-color$">
+
+        <div class="title-card-body">
+
+            <hgroup>
+                <h1>$title$</h1>
+                $if(subtitle)$
+                <h2>$subtitle$</h2>
+                $endif$
+            </hgroup>
+            <small><em>$for(author)$$author.name$$sep$, $endfor$</em></small>
+        </div>
+
+    </div>
    
     <main class="container">
 
         <article>
-            <header>
-                <hgroup>
-                    <h2>$title$</h2>
-                    $if(subtitle)$
-                    <h3>$subtitle$</h3>
-                    $endif$
-                </hgroup>
-                <small><em>$for(author)$$author.name$$sep$, $endfor$</em></small>
-            </header>
                 $description$
-                <details>
+                <details open>
                     <summary><strong>More Information</strong></summary>
                     <dl>
+                        $if(subjects)$
+                        <dt>Subjects</dt>
+                        <dd>$for(subjects)$$subjects$$sep$, $endfor$</dd>
+                        $endif$
                         <dt>Copyright</dt>
-                        <dd>$publication-year$ &copy; $copyright.holder$</dd>
+                        <dd><a href="$copyright.statement-uri$">$publication-year$ &copy; $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$</a></dd>
                         <dt>License</dt>
                         <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
                         <dt>Publisher</dt>
@@ -109,6 +119,8 @@ $endfor$
                         <dt>Contributors</dt>
                         <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
                         $endif$
+                        <dt>Preferred Attribution</dt>
+                        <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>, $publication-year$.$endif$</dd>
                     </dl>
                 </details>
             <footer>

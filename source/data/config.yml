@@ -1,9 +1,6 @@
 # website settings
 
-navbar-bg-color: "#04165e"
-navbar-text-color: "#ffffff"
-footer-bg-color: "#04165e"
-footer-text-color: "#ffffff"
+title-card-bg-color: "#3D2F5B"
 
 cover: true
 toc-title: "Contents" 
@@ -12,7 +9,7 @@ reference-section-title: "References"
 format: # full-text outputs
   - label: Documentation
     link: textbook.html
-  - label: GitHub Repo
+  - label: Template GitHub Repository
     link: https://github.com/nulib-oer/lantern
 
 # pandoc-crossref option

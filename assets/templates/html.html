@@ -30,23 +30,23 @@
         $include-before$
     $endfor$
     <main class="container">
-        <div class="parent">
+        <div class="grid">
             <div class="toc">
                 <aside>
                     <nav>
-                        <a href="index.html">Back to home</a>
+                        <a href="index.html" class="back">
+                            Back to Home
+                        </a>
                         $table-of-contents$
                     </nav>
                 </aside>
             </div>
             <div class="content">
-                <div role="document">
-                    $body$
+$body$
 
                     $if(definitions)$
                     ${ definitions.html() }
                     $endif$
-                </div>
             </div>
         </div>   
     </main>

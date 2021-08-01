@@ -25,7 +25,7 @@ number-sections: false
 # citations
 citeproc: true
 bibliography:
-  - source/references.bib
+  - source/data/references.bib
 
 # code blocks
 highlight-style: pygments
@@ -53,8 +53,8 @@ epub-subdirectory: EPUB
 epub-chapter-level: 1
 
 css: 
-  - assets/lib/uikit.css
-  - assets/styles/lantern.css
+  - assets/styles/html.css
+  - assets/styles/custom.css
 
 resource-path:
   - .
